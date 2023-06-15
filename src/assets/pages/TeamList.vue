@@ -2,7 +2,7 @@
     <div class="position-absolute"></div>
     <div class="container">
         <h1>L'idea se ti garba è dedicare una pagina a noi che abbiamo fatto l'app 🚀</h1>
-        <div class="row gy-3 align-items-center justify-content-center">
+        <div class="row gy-3 align-items-center justify-content-center row-cols-lg-5">
             <TeamCard v-for="(member, index) in members" :member="member" :key="index" />
         </div>
     </div>

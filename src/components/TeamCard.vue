@@ -1,5 +1,5 @@
 <template>
-        <div class="col-12 col-sm-6 col-md-4 pt-3 col-lg-3">
+        <div class="col pt-3 ">
             <div class="my-card border p-3 text-white">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
                 <div class="">
