@@ -13,6 +13,8 @@ export default {
   name: 'App',
   components: { HeaderApp, FooterApp }
 }
+
+
 </script>
 
 <style lang="scss" scoped></style>

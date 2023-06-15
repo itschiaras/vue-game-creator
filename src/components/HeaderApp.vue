@@ -1,7 +1,7 @@
 <template>
     <header>
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg">
 
             <div class="container-fluid">
 
@@ -64,11 +64,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+header {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+}
+
 .navbar {
     background: rgba(0, 0, 0, 0.28);
     backdrop-filter: blur(4.5px);
     -webkit-backdrop-filter: blur(4.5px);
-    height: 50px;
+
     width: 100%;
 }
 </style>
