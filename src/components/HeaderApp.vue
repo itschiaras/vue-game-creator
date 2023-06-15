@@ -5,7 +5,8 @@
 
             <div class="container-fluid">
 
-                <router-link :to="{ name: Home }" class="Nav-link">Nome della pagina che dobbiamo scegliere 🫡</router-link>
+                <router-link :to="{ name: Home }" class="nav-link _myactive"><i class="fa-solid fa-gamepad"></i>
+                    GameCreator®️</router-link>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,10 +21,9 @@
 
                             <!-- per fare routing non si usano le ancore normali -->
                             <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
-                            <router-link :to="{ name: route.route }" class="nav-link " active-class="active">{{
+                            <router-link :to="{ name: route.route }" class="nav-link" active-class="_myactive">{{
                                 route.name
                             }}</router-link>
-
 
                         </li>
 
@@ -70,5 +70,16 @@ export default {
     -webkit-backdrop-filter: blur(4.5px);
     height: 50px;
     width: 100%;
+}
+
+.nav-link {
+    color: white;
+}
+
+._myactive {
+    font-weight: bolder;
+    color: white;
+    opacity: 100%;
+    scale: 0.9;
 }
 </style>
