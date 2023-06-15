@@ -2,7 +2,7 @@
     <footer class="d-flex align-items-center justify-content-center flex-column">
         <p class="text-white">Made with &hearts; by Konoha Team</p>
         <div class="d-flex">
-            <p class="text-white me-2">Take a look to our repo:</p>
+            <p class="text-white me-2">Take a look at our repo:</p>
             <a href="https://github.com/itschiaras/vue-game-creator"><i class="fa-brands fa-github"></i></a>
         </div>
 
