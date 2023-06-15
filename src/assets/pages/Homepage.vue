@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex justify-content-center align-items-center">
-        <h1>Game Creator</h1>
+        <h1 class="fw-bold">Game Creator</h1>
     </div>
 </template>
 
