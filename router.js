@@ -22,6 +22,8 @@ const router = createRouter({
             name: 'Character',
             component: SingleCharacter
         },
-        
+
     ]
 })
+
+export { router };
