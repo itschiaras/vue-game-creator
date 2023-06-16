@@ -32,8 +32,8 @@ export default {
                     name: 'Marco Bione',
                     image: 'src/assets/img/121133430.jpg',
                     githubURL: 'https://github.com/MarcoBione',
-                    ig: null,
-                    fb: null,
+                    ig: 'https://www.instagram.com/marco.bione/',
+                    fb: 'https://www.facebook.com/',
                     description: 'Junior Full Stack Developer',
                     technologies: ['HTML', 'CSS', 'JS', 'VUE', 'PHP', 'LARAVEL']
                 },
@@ -82,6 +82,4 @@ export default {
 .container {
     padding-top: 100px;
 }
-
-
 </style>
