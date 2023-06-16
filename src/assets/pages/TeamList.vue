@@ -1,6 +1,6 @@
 <template>
     <div class="position-absolute"></div>
-    <div class="container">
+    <div class="container pt-5">
         <h1>L'idea se ti garba è dedicare una pagina a noi che abbiamo fatto l'app 🚀</h1>
         <div class="row gy-3 align-items-center justify-content-center row-cols-lg-5">
             <TeamCard v-for="(member, index) in members" :member="member" :key="index" />
@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 .position-absolute {
     background-color: rgba(0, 0, 0, 0.5);
-    top: 50px;
+    top: 55px;
     bottom: 0;
     right: 0;
     left: 0;
