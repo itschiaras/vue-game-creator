@@ -3,6 +3,7 @@
         <h1>Characters overview</h1>
         <div class="row">
             <div class="col" v-for="(character, index) in characters">
+             <router-link :to="{ name: 'Character', params: { id: character.id } }" class="text-dark">
                 <div class="card-container">
 
                     <div class="card-background">
@@ -23,14 +24,16 @@
 
                             <div class="frame-text-box">
 
-                                <p class="description ftb-inner-margin">{{ character.description }}</p>
+                                <p v-if="character.description != '<br>'" v-html="character.description" class="description ftb-inner-margin"></p>
+                                <p v-else class="description ftb-inner-margin"> Nessuna Descrizione</p>
                                 <!-- 
                                 <p class="description">You may spend mana as though it were mana of any color to cast
                                     planeswalker
                                     spells.</p>
 
                                 <p class="flavour-text">"For the life of every plane, I will keep watch."</p> -->
-
+                                
+                               
                             </div>
 
                             <!-- <div class="frame-bottom-info inner-margin">
@@ -51,8 +54,20 @@
                     </div>
 
                 </div>
+             </router-link>
 
             </div>
+            <div class="d-flex justify-content-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination mt-3">
+                    <li class="page-item"><button class="page-link" :class="currentPage === 1 ? 'd-none': '' " @click="getData(currentPage - 1)">Previous</button></li>
+                    <li class="page-item" v-for="n in lastPage"><button  :class="{ 'page-link': true, 'active': currentPage === n }" @click="getData(n)">{{ n }}</button>
+                    </li>
+    
+                    <li class="page-item"><button class="page-link" :class="currentPage === lastPage ? 'd-none': ''" @click="getData(currentPage + 1)">Next</button></li>
+                </ul>
+            </nav>
+        </div>
         </div>
     </div>
 </template>
@@ -66,14 +81,16 @@ export default {
             characters: [],
             apiBaseUrl: 'http://127.0.0.1:8000/api',
             currentPage: 1,
-            lastPage: null
+            lastPage: null,
         }
 
     },
     methods: {
         getData(numPage) {
             axios.get(`${this.apiBaseUrl}/characters`, {
-
+                params: {
+                    "page": numPage
+                }
             }).then((res) => {
                 this.characters = res.data.results.data;
                 console.log(this.characters);
