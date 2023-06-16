@@ -1,20 +1,14 @@
 <template>
-    <div class="d-flex justify-content-center align-items-center">
-        <h1 class="fw-bold">Game Creator</h1>
-    </div>
+    <JumboApp />
 </template>
 
 <script>
+import JumboApp from '../../components/JumboApp.vue';
+
 export default {
-    name: 'Homepage'
+    name: "Homepage",
+    components: { JumboApp }
 }
 </script>
 
-<style lang="scss" scoped>
-h1 {
-    position: absolute;
-    top: 200px;
-    font-size: 200px;
-    color: rgb(220, 215, 215);
-}
-</style>
+<style lang="scss" scoped></style>

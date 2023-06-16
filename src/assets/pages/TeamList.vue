@@ -73,7 +73,7 @@ export default {
 <style lang="scss" scoped>
 .position-absolute {
     background-color: rgba(0, 0, 0, 0.5);
-    top: 50px;
+    top: 55px;
     bottom: 0;
     right: 0;
     left: 0;
