@@ -5,7 +5,7 @@
 
             <div class="container-fluid">
 
-                <router-link :to="{ name: Home }" class="nav-link _myactive"><i class="fa-solid fa-gamepad"></i>
+                <router-link :to="{ name: 'Home' }" class="nav-link _myactive"><i class="fa-solid fa-gamepad"></i>
                     GameCreator®️</router-link>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
