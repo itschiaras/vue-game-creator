@@ -4,9 +4,13 @@
             <div class="card-background">
                 <div class="card-frame">
                     <div class="frame-header">
-                        <h5 class="name"> {{ character.name }}</h5>
+                        <h5 class="name pb-3"> {{ character.name }}</h5>
                     </div>
-                    <div class="frame-type-line">
+                    <div>
+                        <img class="frame-art mt-1" src="/img/characters/Barbarian.jpg" alt="nissa art">
+                    </div>
+
+                    <div class="frame-type-line mt-2">
                         <h4 class="type">{{ character.type.name }}</h4>
                     </div>
                     <div class="frame-text-box text-center">
@@ -24,10 +28,10 @@
 
 
                         <div v-if="character.items && character.items.length > 0">
-                            <h3 class="text-white mt-4">Items</h3>
+                            <h3 class="text-white">Items</h3>
                             <div class="d-flex gap-3 justify-content-center">
                                 <p v-for=" item in character.items
-                    " class="badge rounded-pill text-bg-success py-2 px-3 mt-2">{{ item.name }}</p>
+                    " class="badge rounded-pill text-bg-success py-2 px-3">{{ item.name }}</p>
                             </div>
                         </div>
                         <div v-else>
@@ -171,6 +175,8 @@ export default {
                     border-right: 1px solid #fff;
                 }
 
+
+
                 .frame-header,
                 .frame-art,
                 .frame-type-line {
@@ -179,6 +185,21 @@ export default {
                         0 0 0 5px #26714A,
                         -3px 3px 2px 5px #171314;
                     margin-bottom: 7px;
+                }
+
+                .frame-art {
+
+                    width: 290px;
+                    height: 190px;
+                    object-fit: cover;
+                    object-position: 0px -50px;
+                    /* make it fit in the card */
+                    margin: 0 10px;
+
+                    /* align it vertically */
+                    img {
+                        width: 50%;
+                    }
                 }
 
                 .frame-text-box {
