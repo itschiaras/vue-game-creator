@@ -7,7 +7,8 @@
                         <h5 class="name pb-3"> {{ character.name }}</h5>
                     </div>
                     <div>
-                        <img class="frame-art mt-1" src="/img/characters/Barbarian.jpg" alt="nissa art">
+                        <img class="frame-art mt-1" :src="'/img/characters/' + character.type.name + '.jpg'"
+                            alt="nissa art">
                     </div>
 
                     <div class="frame-type-line mt-2">
@@ -17,12 +18,12 @@
                         <div class="d-flex flex-wrap justify-content-evenly gap-3">
                             <p class="stat-box py-2 text-uppercase">atk: {{ character.attack }}
                             </p>
-                            <p class="stat-box py-2  text-uppercase">def: {{ character.defence
+                            <p class="stat-box py-2 text-uppercase">def: {{ character.defence
                             }}
                             </p>
-                            <p class="stat-box py-2  text-uppercase">spd: {{ character.speed }}
+                            <p class="stat-box py-2 text-uppercase">spd: {{ character.speed }}
                             </p>
-                            <p class="stat-box py-2  text-uppercase">hp: {{ character.life }}
+                            <p class="stat-box py-2 text-uppercase">hp: {{ character.life }}
                             </p>
                         </div>
 
@@ -102,7 +103,7 @@ export default {
 
     .name {
         font-weight: bold;
-        font-size: 1.7rem;
+        font-size: 1.4rem;
         padding-left: 5px;
         color: black;
     }
@@ -192,7 +193,7 @@ export default {
                     width: 290px;
                     height: 190px;
                     object-fit: cover;
-                    object-position: 0px -50px;
+                    object-position: 0px -10px;
                     /* make it fit in the card */
                     margin: 0 10px;
 

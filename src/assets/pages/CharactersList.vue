@@ -3,71 +3,54 @@
         <h1>Characters overview</h1>
         <div class="row">
             <div class="col" v-for="(character, index) in characters">
-             <router-link :to="{ name: 'Character', params: { id: character.id } }" class="text-dark">
-                <div class="card-container">
+                <router-link :to="{ name: 'Character', params: { id: character.id } }" class="text-dark">
+                    <div class="card-container">
 
-                    <div class="card-background">
+                        <div class="card-background">
 
-                        <div class="card-frame">
+                            <div class="card-frame">
 
-                            <div class="frame-header">
-                                <h5 class="name">{{ character.name }}</h5>
-                                <!-- here goes the mana icon -->
-                            </div>
+                                <div class="frame-header pb-2">
+                                    <h5 class="name">{{ character.name }}</h5>
+                                    <!-- here goes the mana icon -->
+                                </div>
+                                <div>
+                                    <img class="frame-art mt-1" :src="'/img/characters/' + character.type.name + '.jpg'"
+                                        alt="">
+                                </div>
+                                <!-- Here goes the illustration -->
 
-                            <!-- Here goes the illustration -->
-
-                            <div class="frame-type-line">
-                                <h4 class="type">{{ character.type.name }}</h4>
-                                <!-- Here goes the set icon -->
-                            </div>
-
-                            <div class="frame-text-box">
-
-                                <p v-if="character.description != '<br>'" v-html="character.description" class="description ftb-inner-margin"></p>
-                                <p v-else class="description ftb-inner-margin"> Nessuna Descrizione</p>
-                                <!-- 
-                                <p class="description">You may spend mana as though it were mana of any color to cast
-                                    planeswalker
-                                    spells.</p>
-
-                                <p class="flavour-text">"For the life of every plane, I will keep watch."</p> -->
-                                
-                               
-                            </div>
-
-                            <!-- <div class="frame-bottom-info inner-margin">
-                                <div class="fbi-left">
-                                    <p>140/184 R</p>
-                                    <p>OGW &#x2022; EN  Wesley Burt</p>
+                                <div class="frame-type-line pb-2">
+                                    <h4 class="type">{{ character.type.name }}</h4>
+                                    <!-- Here goes the set icon -->
                                 </div>
 
-                                <div class="fbi-center"></div>
+                                <div class="frame-text-box">
 
-                                <div class="fbi-right">
-                                    &#x99; &amp; &#169; 2016 Wizards of the Coast
+                                    <p v-if="character.description != '<br>'" v-html="character.description"
+                                        class="description ftb-inner-margin"></p>
+                                    <p v-else class="description ftb-inner-margin"> Nessuna Descrizione</p>
                                 </div>
-                            </div> -->
-
+                            </div>
                         </div>
-
                     </div>
-
-                </div>
-             </router-link>
-
+                </router-link>
             </div>
             <div class="d-flex justify-content-center">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination mt-3">
-                    <li class="page-item"><button class="page-link" :class="currentPage === 1 ? 'd-none': '' " @click="getData(currentPage - 1)">Previous</button></li>
-                    <li class="page-item" v-for="n in lastPage"><button  :class="{ 'page-link': true, 'active': currentPage === n }" @click="getData(n)">{{ n }}</button>
-                    </li>
-    
-                    <li class="page-item"><button class="page-link" :class="currentPage === lastPage ? 'd-none': ''" @click="getData(currentPage + 1)">Next</button></li>
-                </ul>
-            </nav>
-        </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination mt-3">
+                        <li class="page-item"><button class="page-link" :class="currentPage === 1 ? 'd-none' : ''"
+                                @click="getData(currentPage - 1)">Previous</button></li>
+                        <li class="page-item" v-for="n in lastPage"><button
+                                :class="{ 'page-link': true, 'active': currentPage === n }" @click="getData(n)">{{ n
+                                }}</button>
+                        </li>
+
+                        <li class="page-item"><button class="page-link" :class="currentPage === lastPage ? 'd-none' : ''"
+                                @click="getData(currentPage + 1)">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
 </template>
@@ -112,18 +95,26 @@ export default {
 .container {
     padding-top: 200px;
 
+    .pagination {
+        position: fixed;
+
+        bottom: 100px;
+        right: 0;
+        margin-right: 30px;
+    }
+
     h1 {
         color: white;
         margin-bottom: 50px;
     }
 
     .description {
-        font-size: .6rem;
+        font-size: .55rem;
     }
 
     .name {
         font-weight: bold;
-        font-size: .8rem;
+        font-size: .7rem;
         padding-left: 5px;
     }
 
@@ -137,7 +128,7 @@ export default {
         border: 1px solid black;
         background-color: black;
         width: 200px;
-        height: 270px;
+        height: 340px;
         margin: 0 auto;
         /* margin-top: 56px; */
         border-radius: 25px;
@@ -149,9 +140,11 @@ export default {
             transition: 1.5s;
         }
 
+
+
         /*background: #171314; */
         .card-background {
-            height: 230px;
+            height: 300px;
             margin: 15px 15px 0 15px;
             border-top-left-radius: 6px;
             border-top-right-radius: 6px;
@@ -164,7 +157,7 @@ export default {
             .card-frame {
                 z-index: 1;
                 position: relative;
-                height: 230px;
+                height: 300px;
                 max-width: 98%;
                 left: 1%;
                 top: 0.5%;
@@ -194,6 +187,19 @@ export default {
                         0 0 0 5px #26714A,
                         -3px 3px 2px 5px #171314;
                     margin-bottom: 7px;
+                }
+
+                .frame-art {
+
+                    width: 145px;
+                    height: 90px;
+                    object-fit: cover;
+                    object-position: 0px -10px;
+                    margin: 0 10px;
+
+                    img {
+                        width: 50%;
+                    }
                 }
 
                 .frame-text-box {
